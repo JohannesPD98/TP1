@@ -1,5 +1,8 @@
 #ifndef __ESTACAO_H__
 #define __ESTACAO_H__
+#include <iostream>
+#include <string>
+#include <sstream>
 
 class Estacao{ 
 private:
@@ -22,5 +25,6 @@ public:
 	void set_longitude(float);
 	Estacao* get_prox();
 	void set_prox(Estacao);
+	void carregaEstacoes(const char *);
 };
 #endif

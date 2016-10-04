@@ -1,13 +1,21 @@
 #ifndef __PARADA_H__
 #define __PARADA_H__
+#include <iostream>
+#include <string>
+#include <sstream>
+#include "Veiculo.h"
+using namespace std;
+
+class Veiculo;
+class ListaVeiculo;
 
 class Parada{
 private:
 	int ID;
 	float latitude;
 	float longitude;
-	parada *prox;
-	listaVeiculo *lstVeiculo;
+	Parada *prox;
+	Veiculo *lstVeiculo;
 public:
     // Construtores
 	Parada();
@@ -18,23 +26,12 @@ public:
 	void set_latitude(float);
 	float get_longitude();
 	void set_longitude(float);
-	parada* get_prox();
-	void set_prox(parada);
-	listaVeiculo* get_lstVeiculo();
-	void set_lstVeiculo(listaveiculo);
+	Parada get_prox();
+	void set_prox(Parada);
+	ListaVeiculo* get_lstVeiculo();
+	void set_lstVeiculo(ListaVeiculo);
+	void carregaParadas(const char *);
+	void vinculaVeiculos(const char *);
 };   
 
-class listaParada{
-private:
-	listaParada *prox;
-	Parada *abrigo;
-public:
-    // Construtores 
-	listaParada();
-    // métodos para manipulação
-	listaParada* get_prox();
-	void set_prox(listParada);
-	Parada get_abrigo();
-	void set_abrigo(Parada);
-};
 #endif

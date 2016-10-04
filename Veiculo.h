@@ -3,7 +3,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-
+#include "Parada.h"
+using namespace std;
 
 class Veiculo{
 private:
@@ -12,7 +13,7 @@ private:
 	string linha;
 	char tipo; // L=lotação ou O=ônibus
 	Veiculo *prox;   
-	listaParadas *lstParada; // A lista de paradas deve ser organizada a fim de supor a ordem em que se dá o deslocamento do veículo
+	Parada *lstParada; // A lista de paradas deve ser organizada a fim de supor a ordem em que se dá o deslocamento do veículo
 public:
     // Construtores
 	Veiculo(); 
@@ -27,24 +28,20 @@ public:
 	void set_linha(string);
 	char get_tipo();
 	void set_tipo(char);
-	Veiculo& get_prox();
+	Veiculo get_prox();
 	void set_prox(Veiculo);
-	listaParadas& get_lstParada();
-	void set_lstParada(listaparadas);
+	Parada get_lstParada();
+	void RegistraParadaNoVeiculo(Parada *p);
 	
 };
 
-class listaVeiculo{
+class ListaVeiculo{
 private:
-	listaVeiculo *prox;
-	Veiculo *transporte;
+	Veiculo *prim, *ult;
+
 public:
-    // Construtores 
-	listaVeiculo();
-    // sets e gets para todos os atributos
-	listaVeiculo& get_prox();
-	void set_prox(listaVeiculo);
-	Veiculo& get_transporte();
-	void set_transporte(Veiculo);	
+	void carregaVeiculos(const char*);
+
 };
+
 #endif
