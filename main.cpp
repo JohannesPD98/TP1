@@ -6,7 +6,7 @@
   int main(void) {
 	int opcao;
 
-    Veiculo transportePublico; // objeto que gerencia a lista de veículos
+    ListaVeiculo transportePublico; // objeto que gerencia a lista de veículos
 
     Parada todasAsParadas; // objeto que gerencia a lista de paradas em poa
 
